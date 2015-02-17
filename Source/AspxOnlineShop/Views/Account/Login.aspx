@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<AspxOnlineShop.Models.LoginModel>" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<AspxOnlineShop.Models.Login>" %>
 
 <asp:Content ID="loginTitle" ContentPlaceHolderID="TitleContent" runat="server">
     Log in
@@ -19,18 +19,14 @@
             <legend>Log in Form</legend>
             <ol>
                 <li>
-                    <%: Html.LabelFor(m => m.UserName) %>
-                    <%: Html.TextBoxFor(m => m.UserName) %>
-                    <%: Html.ValidationMessageFor(m => m.UserName) %>
+                    <%: Html.LabelFor(m => m.MailAddress) %>
+                    <%: Html.TextBoxFor(m => m.MailAddress) %>
+                    <%: Html.ValidationMessageFor(m => m.MailAddress) %>
                 </li>
                 <li>
                     <%: Html.LabelFor(m => m.Password) %>
                     <%: Html.PasswordFor(m => m.Password) %>
                     <%: Html.ValidationMessageFor(m => m.Password) %>
-                </li>
-                <li>
-                    <%: Html.CheckBoxFor(m => m.RememberMe) %>
-                    <%: Html.LabelFor(m => m.RememberMe, new { @class = "checkbox" }) %>
                 </li>
             </ol>
             <input type="submit" value="Log in" />
@@ -41,10 +37,6 @@
     <% } %>
     </section>
 
-    <section class="social" id="socialLoginForm">
-        <h2>Use another service to log in.</h2>
-        <%: Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl }) %>
-    </section>
 </asp:Content>
 
 <asp:Content ID="scriptsContent" ContentPlaceHolderID="ScriptsSection" runat="server">

@@ -1,11 +1,32 @@
 ﻿using System.Net.Mail;
 using AspxOnlineShop.Database;
+using AspxOnlineShop.Infrastructure;
 using AspxOnlineShop.Models;
 
 namespace AspxOnlineShop.Converter
 {
     public class AccountConverter
     {
+        private AccessManager _manager;
+
+        public AccountConverter()
+        {
+            _manager = new AccessManager();
+        }
+
+
+        public Nutzer ConvertToNutzer(Login login)
+        {
+            var exits = _manager.ProofExistingNutzer(login);
+
+            if (!exits)
+                return null;
+
+            return _manager.GetNutzer(login);
+        }
+
+
+
         public Nutzer ConvertToAccount(Registration reg)
         {
             var nutzer = new Nutzer();

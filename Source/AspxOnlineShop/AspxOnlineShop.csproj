@@ -193,6 +193,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\AccessManager.cs" />
     <Compile Include="Models\LoginRegistration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -273,6 +274,7 @@
     <Content Include="Scripts\knockout-2.2.0.debug.js" />
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Account\AccountData.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -295,15 +297,8 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
-    <Content Include="Views\Account\_ChangePasswordPartial.aspx" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.aspx" />
-    <Content Include="Views\Account\_RemoveExternalLoginsPartial.aspx" />
-    <Content Include="Views\Account\_SetPasswordPartial.aspx" />
     <Content Include="Views\Account\Login.aspx" />
-    <Content Include="Views\Account\Manage.aspx" />
     <Content Include="Views\Account\Register.aspx" />
-    <Content Include="Views\Account\ExternalLoginFailure.aspx" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.aspx" />
     <Content Include="Views\Home\About.aspx" />
     <Content Include="Views\Home\Contact.aspx" />
     <Content Include="Views\Home\Index.aspx" />

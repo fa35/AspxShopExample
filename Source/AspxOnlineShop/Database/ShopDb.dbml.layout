@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ShopDb">
+  <DataContextMoniker Name="/ShopDbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c3427d10-5648-47c5-badb-5b9826e706c9" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ShopDbDataContext/Untergruppe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da739c0b-34fe-478d-8ba7-4094fda90cff" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fe2433be-e3dc-4a47-a058-34d6437f7ee1" absoluteBounds="0.75, 2.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ShopDbDataContext/Artikel" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e2179a09-3889-4ee6-960f-33968d6621c6" absoluteBounds="0.765, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5fbc7cd8-a55a-4f33-a7de-9055fe7d5f1e" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/ShopDbDataContext/Hauptgruppe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d707d436-8da9-44b6-8865-51c7430f670a" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd91dd6a-4d25-41d1-b128-1afb1397e405" absoluteBounds="3.75, 2.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/ShopDbDataContext/Nutzer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd4624f6-63a4-4cb5-bec6-fc13bce0488e" absoluteBounds="3.765, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cc2dc8e7-a7b7-41b7-99fb-860b2e0d32eb" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/ShopDbDataContext/Steuersatz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0aad99de-202c-4861-b5ea-e3ed89e9d6ec" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

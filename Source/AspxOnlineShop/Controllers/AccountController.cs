@@ -1,7 +1,6 @@
 ﻿using System.Web.Mvc;
 using AspxOnlineShop.Converter;
 using AspxOnlineShop.Models;
-using WebMatrix.WebData;
 
 namespace AspxOnlineShop.Controllers
 {
@@ -9,7 +8,8 @@ namespace AspxOnlineShop.Controllers
     public class AccountController : Controller
     {
         //
-        //    // GET: /Account/Login
+        //   
+        // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -18,9 +18,9 @@ namespace AspxOnlineShop.Controllers
         }
 
 
-
         //
-        //    // POST: /Account/Login
+        //    
+        // POST: /Account/Login
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

@@ -10,7 +10,7 @@
 
 </asp:Content>
 
-<asp:Content ID="Content3" ContentPlaceHolderID="FeaturedContent" runat="server">
+<asp:Content ID="Content3" ContentPlaceHolderID="NotificationArea" runat="server">
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="ScriptsSection" runat="server">

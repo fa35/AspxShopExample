@@ -12,9 +12,15 @@
    else
    { %>
 
+<%--<section><%: Html.Partial("_LoginPartial") %></section>--%>
+
 <ul class="menulist">
-    <li><%: Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })%></li>
-    <li><%: Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })%></li>
+    <li><%: Html.ActionLink("Register", "Register", "Account")%></li>
+    <li><%: Html.ActionLink("Log in", "Login", "Account")%></li>
+    <li><%: Html.ActionLink("Home", "Index", "Home")%></li>
+    <li><%: Html.ActionLink("About", "About", "Home")%></li>
+    <li><%: Html.ActionLink("Contact", "Contact", "Home")%></li>
+    <li><%: Html.ActionLink("Warenkorb", "Index", "Cart")%></li>
 </ul>
 
 <% } %>

@@ -1,49 +1,74 @@
 ﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
 <!DOCTYPE html>
-<html lang="en">
-    <head runat="server">
-        <meta charset="utf-8" />
-        <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
-        <link href="<%: Url.Content("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        <%: Styles.Render("~/Content/css") %>
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title"><%: Html.ActionLink("your logo here", "Index", "Home") %></p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        <%: Html.Partial("_LoginPartial") %>
-                    </section>
-                    <nav>
-                        <ul id="menu">
-                            <li><%: Html.ActionLink("Home", "Index", "Home") %></li>
-                            <li><%: Html.ActionLink("About", "About", "Home") %></li>
-                            <li><%: Html.ActionLink("Contact", "Contact", "Home") %></li>
-                        </ul>
-                    </nav>
-                </div>
+<html lang="de-de">
+
+<head runat="server">
+    <meta charset="utf-8" />
+    
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+
+    <link href="<%: Url.Content("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+
+    <%: Styles.Render("~/Content/css") %>
+    <%: Styles.Render("~/bootstrap/css") %>
+    <%: Styles.Render("~/bootstrap/fonts") %>
+    <script type="text/javascript" src="../../Scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <header class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 left">
+                <img src="../../Content/images/logo_no1.png" alt="mastershop24" style="width: 400px;" />
             </div>
+            <div class="col-md-6 right">
+                <section><%: Html.Partial("_Menu")%></section>
+            </div>
+            <div class="col-md-1"></div>
         </header>
-        <div id="body">
-            <asp:ContentPlaceHolder ID="FeaturedContent" runat="server" />
-            <section class="content-wrapper main-content clear-fix">
-                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-            </section>
-        </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET MVC Application</p>
-                </div>
+
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 notificationarea">
+                <asp:ContentPlaceHolder ID="NotificationArea" runat="server" />
             </div>
+            <div class="col-md-2"></div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <section>
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </section>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+
+
+        <footer class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                    &copy; <%: DateTime.Now.Year %> - mastershop24 <a href="#">Impressum</a>
+            </div>
+            <div class="col-md-4"></div>
         </footer>
 
-        <%: Scripts.Render("~/bundles/jquery") %>
-        <asp:ContentPlaceHolder ID="ScriptsSection" runat="server" />
-    </body>
+        <%: Scripts.Render("~/bundles/others") %>
+        <script type="text/javascript" src="../../Scripts/bootstrap/bootstrap.min-3.3.2.js"></script>
+        <script type="text/javascript" src="../../Scripts/bootstrap/npm.js"></script>
+    </div>
+
+    <asp:ContentPlaceHolder ID="ScriptsSection" runat="server" />
+
+</body>
 </html>

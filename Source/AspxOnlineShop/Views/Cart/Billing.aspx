@@ -1,9 +1,7 @@
-﻿<%@ Page Title="Billing" Language="C#" Inherits="System.Web.Mvc.ViewPage<AspxOnlineShop.Models.BillingModel>" MasterPageFile="~/Views/Shared/Site.Master" %>
-
-<asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent"></asp:Content>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<AspxOnlineShop.Models.BillingModel>" MasterPageFile="~/Views/Shared/Site.Master" %>
 
 
-<asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="Main" ContentPlaceHolderID="content">
     
     <h2>Artikel im Warenkorb</h2>
     <table class="table table-bordered table-striped">
@@ -37,8 +35,4 @@
             
         </tbody>
     </table>
-</asp:Content>
-
-
-<asp:Content runat="server" ID="ScriptsSection" ContentPlaceHolderID="ScriptsSection">
 </asp:Content>

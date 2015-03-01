@@ -4,24 +4,17 @@ using AspxOnlineShop.Models;
 
 namespace AspxOnlineShop.Controllers
 {
-
     public class AccountController : Controller
     {
+        // /Account/Login
 
-        // GET: /Account/Login
         [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
 
-
-        //
-        //    
-        // POST: /Account/Login
         [HttpPost]
-        [AllowAnonymous]
-        [ValidateAntiForgeryToken]
         public ActionResult Login(Login model)
         {
             // checke model
@@ -29,21 +22,22 @@ namespace AspxOnlineShop.Controllers
 
             var nutzer = converter.ConvertToNutzer(model);
 
-            if(nutzer == null)
-                ModelState.AddModelError("", "The user name or password provided is incorrect.");
+            if (nutzer == null)
+            {
+                ViewBag.Message = "E-Mail Adresse oder Passwort falsch.";
+                return View("Error");
+            }
 
             return View("AccountData", nutzer);
         }
 
-
-        // GET: /Account/Register
+     
         [AllowAnonymous]
         public ActionResult Register()
         {
             return View();
         }
 
-        
     }
 
    

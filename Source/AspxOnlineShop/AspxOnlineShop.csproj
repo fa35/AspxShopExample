@@ -231,6 +231,7 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Views\Account\AccountData.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Cart\Billing.aspx" />
     <Content Include="Views\Cart\Cart.aspx" />
     <Content Include="Views\Home\GeneralBusinessTerms.aspx" />
@@ -261,8 +262,7 @@
     <Content Include="Views\Account\Register.aspx" />
     <Content Include="Views\Home\LegalNotice.aspx" />
     <Content Include="Views\Home\Index.aspx" />
-    <Content Include="Views\Shared\Error.aspx" />
-    <Content Include="Views\Shared\_LoginPartial.aspx" />
+    <Content Include="Views\Shared\_Login.aspx" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Web.config" />
   </ItemGroup>

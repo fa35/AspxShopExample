@@ -1,8 +1,7 @@
-﻿<%@ Page Title="Cart" Language="C#" Inherits="System.Web.Mvc.ViewPage<System.Collections.Generic.List<AspxOnlineShop.Models.ArticleAtCardModel>>" MasterPageFile="~/Views/Shared/Site.Master" %>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<System.Collections.Generic.List<AspxOnlineShop.Models.ArticleAtCardModel>>" MasterPageFile="~/Views/Shared/Site.Master" %>
 
-<asp:Content runat="server" ID="Title" ContentPlaceHolderID="TitleContent"></asp:Content>
 
-<asp:Content runat="server" ID="Main" ContentPlaceHolderID="MainContent">
+<asp:Content runat="server" ID="Main" ContentPlaceHolderID="content">
     
     <h2>Artikel im Warenkorb</h2>
     <table class="table table-bordered table-striped">
@@ -28,5 +27,3 @@
     </table>
 
 </asp:Content>
-
-<asp:Content runat="server" ID="ScriptsSection" ContentPlaceHolderID="ScriptsSection"></asp:Content>

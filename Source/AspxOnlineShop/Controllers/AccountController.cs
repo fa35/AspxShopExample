@@ -7,13 +7,11 @@ namespace AspxOnlineShop.Controllers
 
     public class AccountController : Controller
     {
-        //
-        //   
+
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -38,7 +36,6 @@ namespace AspxOnlineShop.Controllers
         }
 
 
-        //
         // GET: /Account/Register
         [AllowAnonymous]
         public ActionResult Register()

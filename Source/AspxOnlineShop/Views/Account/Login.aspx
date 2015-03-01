@@ -1,44 +1,36 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<AspxOnlineShop.Models.Login>" %>
 
-<asp:Content ID="loginTitle" ContentPlaceHolderID="TitleContent" runat="server">
-    Log in
-</asp:Content>
+<asp:Content ID="loginContent" ContentPlaceHolderID="content" runat="server">
 
-<asp:Content ID="loginContent" ContentPlaceHolderID="MainContent" runat="server">
-    <hgroup class="title">
-        <h1>Log in.</h1>
-    </hgroup>
+    <%using (Html.BeginForm("Login", "Account", FormMethod.Post, "class='form-horizontal'"))
+      { %>
 
-    <section id="loginForm">
-    <h2>Use a local account to log in.</h2>
-    <% using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) { %>
-        <%: Html.AntiForgeryToken() %>
-        <%: Html.ValidationSummary(true) %>
+    <div class="form-group col-sm-10">
 
-        <fieldset>
-            <legend>Log in Form</legend>
-            <ol>
-                <li>
-                    <%: Html.LabelFor(m => m.MailAddress) %>
-                    <%: Html.TextBoxFor(m => m.MailAddress) %>
-                    <%: Html.ValidationMessageFor(m => m.MailAddress) %>
-                </li>
-                <li>
-                    <%: Html.LabelFor(m => m.Password) %>
-                    <%: Html.PasswordFor(m => m.Password) %>
-                    <%: Html.ValidationMessageFor(m => m.Password) %>
-                </li>
-            </ol>
-            <input type="submit" value="Log in" />
-        </fieldset>
-        <p>
-            <%: Html.ActionLink("Register", "Register") %> if you don't have an account.
-        </p>
+        <label class="control-label col-sm-2" for="mailaddress">E-Mail</label>
+        <div class="col-sm-3">
+            <input type="text" name="mailaddress" placeholder="E-Mail Adresse" title="E-Mail Adresse" class='form-control' required />
+        </div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-success" style="width: 200px; float: right">anmelden</button>
+        </div>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <label class="control-label col-sm-2" for="password">Passwort</label>
+        <div class="col-sm-3">
+            <input type="text" name="password" placeholder="Passwort" title="Passwort" class="form-control" required />
+        </div>
+    </div>
+
+    <div class="form-group col-sm-10">
+        <div class="col-sm-10">
+            Oder <%: Html.ActionLink("registrieren", "Register") %> dich hier, falls du noch keinen Account hast!
+        </div>
+    </div>
+
     <% } %>
-    </section>
-
 </asp:Content>
 
-<asp:Content ID="scriptsContent" ContentPlaceHolderID="ScriptsSection" runat="server">
-    <%: Scripts.Render("~/bundles/jqueryval") %>
+<asp:Content ID="scriptsContent" ContentPlaceHolderID="scripts" runat="server">
 </asp:Content>

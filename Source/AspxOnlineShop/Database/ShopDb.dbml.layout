@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="ShopDb">
   <DataContextMoniker Name="/ShopDbDataContext" />
   <nestedChildShapes>
-    <classShape Id="c3427d10-5648-47c5-badb-5b9826e706c9" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/ShopDbDataContext/Untergruppe" />
-      <nestedChildShapes>
-        <elementListCompartment Id="da739c0b-34fe-478d-8ba7-4094fda90cff" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="fe2433be-e3dc-4a47-a058-34d6437f7ee1" absoluteBounds="0.75, 2.75, 2, 2.7324039713541666">
       <DataClassMoniker Name="/ShopDbDataContext/Artikel" />
       <nestedChildShapes>
@@ -30,6 +24,12 @@
       <DataClassMoniker Name="/ShopDbDataContext/Steuersatz" />
       <nestedChildShapes>
         <elementListCompartment Id="0aad99de-202c-4861-b5ea-e3ed89e9d6ec" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a7cd86f-2893-471b-a14f-2af75d069e4d" absoluteBounds="0.875, 0.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/ShopDbDataContext/Untergruppe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b283bfe-d003-4fbb-9db5-2a57de7ed204" absoluteBounds="0.89, 1.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

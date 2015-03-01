@@ -27,53 +27,53 @@ namespace AspxOnlineShop.Converter
 
 
 
-        public Nutzer ConvertToAccount(Registration reg)
+        public Nutzer ConvertToAccount(Registration registration)
         {
             var nutzer = new Nutzer();
 
 
-            if(string.IsNullOrWhiteSpace(reg.FirstName))
+            if(string.IsNullOrWhiteSpace(registration.FirstName))
                 return null;
-            nutzer.Vorname = reg.FirstName;
+            nutzer.Vorname = registration.FirstName;
 
 
-            if (string.IsNullOrWhiteSpace(reg.LastName))
+            if (string.IsNullOrWhiteSpace(registration.LastName))
                 return null;
-            nutzer.Name = reg.LastName;
+            nutzer.Name = registration.LastName;
 
 
-            if (string.IsNullOrWhiteSpace(reg.MailAddress) || !reg.MailAddress.Contains("@"))
+            if (string.IsNullOrWhiteSpace(registration.MailAddress) || !registration.MailAddress.Contains("@"))
                 return null;
-            nutzer.EMail = reg.MailAddress;
+            nutzer.EMail = registration.MailAddress;
 
-            var mma = new MailAddress(reg.MailAddress);
+            var mma = new MailAddress(registration.MailAddress);
 
 
-            if (string.IsNullOrWhiteSpace(reg.Password))
+            if (string.IsNullOrWhiteSpace(registration.Password))
                 return null;
-            nutzer.Passwort = reg.Password;
+            nutzer.Passwort = registration.Password;
 
 
-            if(string.IsNullOrWhiteSpace(reg.Street))
+            if(string.IsNullOrWhiteSpace(registration.Street))
                 return null;
-            nutzer.Strasse = reg.Street;
+            nutzer.Strasse = registration.Street;
 
 
-            if (string.IsNullOrWhiteSpace(reg.HouseNr))
+            if (string.IsNullOrWhiteSpace(registration.HouseNr))
                 return null;
-            nutzer.HausNr = reg.HouseNr;
+            nutzer.HausNr = registration.HouseNr;
 
 
-            var dig = int.Parse(reg.PostalCode);
+            var pc = int.Parse(registration.PostalCode);
 
-            if (dig == null || dig < 10000)
+            if (pc < 10000)
                 return null;
-            nutzer.PLZ = dig;
+            nutzer.PLZ = pc;
 
 
-            if (string.IsNullOrWhiteSpace(reg.Place))
+            if (string.IsNullOrWhiteSpace(registration.Place))
                 return null;
-            nutzer.Ort = reg.Place;
+            nutzer.Ort = registration.Place;
 
 
             return nutzer;

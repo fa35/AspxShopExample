@@ -30,9 +30,6 @@ namespace AspxOnlineShop.Database
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertUntergruppe(Untergruppe instance);
-    partial void UpdateUntergruppe(Untergruppe instance);
-    partial void DeleteUntergruppe(Untergruppe instance);
     partial void InsertArtikel(Artikel instance);
     partial void UpdateArtikel(Artikel instance);
     partial void DeleteArtikel(Artikel instance);
@@ -45,6 +42,9 @@ namespace AspxOnlineShop.Database
     partial void InsertSteuersatz(Steuersatz instance);
     partial void UpdateSteuersatz(Steuersatz instance);
     partial void DeleteSteuersatz(Steuersatz instance);
+    partial void InsertUntergruppe(Untergruppe instance);
+    partial void UpdateUntergruppe(Untergruppe instance);
+    partial void DeleteUntergruppe(Untergruppe instance);
     #endregion
 		
 		public ShopDbDataContext() : 
@@ -75,14 +75,6 @@ namespace AspxOnlineShop.Database
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<Untergruppe> Untergruppes
-		{
-			get
-			{
-				return this.GetTable<Untergruppe>();
-			}
 		}
 		
 		public System.Data.Linq.Table<Artikel> Artikels
@@ -116,90 +108,12 @@ namespace AspxOnlineShop.Database
 				return this.GetTable<Steuersatz>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Untergruppe")]
-	public partial class Untergruppe : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IdUntergruppe;
-		
-		private string _Titel;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIdUntergruppeChanging(int value);
-    partial void OnIdUntergruppeChanged();
-    partial void OnTitelChanging(string value);
-    partial void OnTitelChanged();
-    #endregion
-		
-		public Untergruppe()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUntergruppe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IdUntergruppe
+		public System.Data.Linq.Table<Untergruppe> Untergruppes
 		{
 			get
 			{
-				return this._IdUntergruppe;
-			}
-			set
-			{
-				if ((this._IdUntergruppe != value))
-				{
-					this.OnIdUntergruppeChanging(value);
-					this.SendPropertyChanging();
-					this._IdUntergruppe = value;
-					this.SendPropertyChanged("IdUntergruppe");
-					this.OnIdUntergruppeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titel", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
-		public string Titel
-		{
-			get
-			{
-				return this._Titel;
-			}
-			set
-			{
-				if ((this._Titel != value))
-				{
-					this.OnTitelChanging(value);
-					this.SendPropertyChanging();
-					this._Titel = value;
-					this.SendPropertyChanged("Titel");
-					this.OnTitelChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+				return this.GetTable<Untergruppe>();
 			}
 		}
 	}
@@ -931,6 +845,116 @@ namespace AspxOnlineShop.Database
 					this._Steuersatz1 = value;
 					this.SendPropertyChanged("Steuersatz1");
 					this.OnSteuersatz1Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Untergruppe")]
+	public partial class Untergruppe : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IdUntergruppe;
+		
+		private string _Titel;
+		
+		private int _IdHauptgruppe;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdUntergruppeChanging(int value);
+    partial void OnIdUntergruppeChanged();
+    partial void OnTitelChanging(string value);
+    partial void OnTitelChanged();
+    partial void OnIdHauptgruppeChanging(int value);
+    partial void OnIdHauptgruppeChanged();
+    #endregion
+		
+		public Untergruppe()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdUntergruppe", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IdUntergruppe
+		{
+			get
+			{
+				return this._IdUntergruppe;
+			}
+			set
+			{
+				if ((this._IdUntergruppe != value))
+				{
+					this.OnIdUntergruppeChanging(value);
+					this.SendPropertyChanging();
+					this._IdUntergruppe = value;
+					this.SendPropertyChanged("IdUntergruppe");
+					this.OnIdUntergruppeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Titel", DbType="VarChar(150) NOT NULL", CanBeNull=false)]
+		public string Titel
+		{
+			get
+			{
+				return this._Titel;
+			}
+			set
+			{
+				if ((this._Titel != value))
+				{
+					this.OnTitelChanging(value);
+					this.SendPropertyChanging();
+					this._Titel = value;
+					this.SendPropertyChanged("Titel");
+					this.OnTitelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IdHauptgruppe", DbType="Int NOT NULL")]
+		public int IdHauptgruppe
+		{
+			get
+			{
+				return this._IdHauptgruppe;
+			}
+			set
+			{
+				if ((this._IdHauptgruppe != value))
+				{
+					this.OnIdHauptgruppeChanging(value);
+					this.SendPropertyChanging();
+					this._IdHauptgruppe = value;
+					this.SendPropertyChanged("IdHauptgruppe");
+					this.OnIdHauptgruppeChanged();
 				}
 			}
 		}

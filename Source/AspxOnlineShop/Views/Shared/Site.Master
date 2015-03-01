@@ -5,9 +5,8 @@
 
 <head runat="server">
     <meta charset="utf-8" />
-    
-    <title>
-        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+
+    <title>mastershop24
     </title>
 
     <link href="<%: Url.Content("~/favicon.ico") %>" rel="shortcut icon" type="image/x-icon" />
@@ -15,60 +14,64 @@
 
     <%: Styles.Render("~/Content/css") %>
     <%: Styles.Render("~/bootstrap/css") %>
-    <%: Styles.Render("~/bootstrap/fonts") %>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
     <script type="text/javascript" src="../../Scripts/modernizr-2.6.2.js"></script>
+
 </head>
 
 <body>
     <div class="container">
 
+        <asp:ContentPlaceHolder ID="scripts" runat="server" />
+
         <header class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-4 left">
-                <img src="../../Content/images/logo_no1.png" alt="mastershop24" style="width: 400px;" />
+            <div class="col-md-5 left" id='logo'>
+                <a href="#">
+                    <img src='../../Content/images/logo_no1.png' alt='mastershop24' style='width: 400px;' />
+                </a>
             </div>
-            <div class="col-md-6 right">
-                <section><%: Html.Partial("_Menu")%></section>
+            <div class="col-md-2"></div>
+            <div class="col-md-5 right">
+                <ul class="nav navbar nav-tabs menulist">
+                    <li><%: Html.ActionLink("registrieren", "Register", "Account")%></li>
+                    <li><%: Html.ActionLink("anmelden", "Login", "Account")%></li>
+                    <li><%: Html.ActionLink("Warenkorb", "Index", "Cart")%></li>
+                </ul>
             </div>
-            <div class="col-md-1"></div>
+
         </header>
 
-
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8 notificationarea">
-                <asp:ContentPlaceHolder ID="NotificationArea" runat="server" />
+            <div class="col-md-2">
+                <asp:ContentPlaceHolder ID="navigation" runat="server" />
             </div>
-            <div class="col-md-2"></div>
-        </div>
-
-
-        <div class="row">
-            <div class="col-md-1"></div>
             <div class="col-md-10">
-                <section>
-                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
-                </section>
-            </div>
-            <div class="col-md-1">
+                <asp:ContentPlaceHolder ID="content" runat="server" />
             </div>
         </div>
-
 
         <footer class="row">
             <div class="col-md-4"></div>
-            <div class="col-md-4">
-                    &copy; <%: DateTime.Now.Year %> - mastershop24 <a href="#">Impressum</a>
+            <div class="col-md-5">
+                &copy; <%: DateTime.Now.Year %> - mastershop24 
+                
+                <%: Html.ActionLink("Impressum", "LegalNotice", "Home")%>
+                <%: Html.ActionLink("AGBs", "GeneralBussinessTerms", "Home")%>
+                <%: Html.ActionLink("Datenschutzerkärung", "PrivacyPolicy", "Home")%>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-3"></div>
         </footer>
 
         <%: Scripts.Render("~/bundles/others") %>
-        <script type="text/javascript" src="../../Scripts/bootstrap/bootstrap.min-3.3.2.js"></script>
-        <script type="text/javascript" src="../../Scripts/bootstrap/npm.js"></script>
+        <%: Scripts.Render("~/bootstrap/scripts") %>
+        <%: Scripts.Render("~/bundles/jquery") %>
+
+        <script type="text/javascript" src="../../Scripts/custom/general.js"></script>
+        <script type="text/javascript" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+
     </div>
 
-    <asp:ContentPlaceHolder ID="ScriptsSection" runat="server" />
+
 
 </body>
 </html>
